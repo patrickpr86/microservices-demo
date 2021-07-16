@@ -27,8 +27,8 @@ public class WorkerResource {
 	}
 	
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<Optional<Worker>> findById(@PathVariable Long id) {
-		Optional<Worker> worker = workerRepository.findById(id);		
+	public ResponseEntity<Worker> findById(@PathVariable Long id) {
+		Worker worker = workerRepository.findById(id).get();		
 		return ResponseEntity.ok().body(worker);
 	}
 
