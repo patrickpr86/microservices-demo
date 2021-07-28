@@ -5,8 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
-@EnableEurekaClient
+
 //@LoadBalancerClient(name = "hr-worker") - substituido pelo eureka client
+
+@EnableEurekaClient
 @EnableFeignClients
 @SpringBootApplication
 public class HrPayrollApplication {

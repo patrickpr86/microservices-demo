@@ -37,6 +37,12 @@ public class WorkerResource {
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Worker> findById(@PathVariable Long id) {
 		
+		/*
+		 * IMPLEMENTAÇÃO TESTE PARA AVERIGAR O RETORNO DA CHAMADA NO CIRCUIT-BRAKER, NO CASO A CHAMADA DEMORA 15S para retornar
+		 * try { Thread.sleep(15000L); } catch (InterruptedException e) { // TODO
+		 * Auto-generated catch block e.printStackTrace(); }
+		 */
+		
 		logger.info("PORT = " + env.getProperty("local.server.port"));		
 		
 		Worker worker = workerRepository.findById(id).get();		
