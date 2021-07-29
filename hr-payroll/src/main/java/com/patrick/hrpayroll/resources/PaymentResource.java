@@ -20,6 +20,7 @@ public class PaymentResource {
 	private PaymentService paymentService;
 
 	@CircuitBreaker(name = "hr-payroll", fallbackMethod = "getPaymentAlternative")
+	
 	@GetMapping(value = "/{workerId}/days/{days}")
 	public ResponseEntity<Payment> getPayment(@PathVariable Long workerId, @PathVariable Integer days) {
 		Payment payment = paymentService.getPayment(workerId, days);
